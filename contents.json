@@ -256,5 +256,38 @@
       { "phrase": "New inputs lead to new outputs.", "desc": "新しい刺激が新しい発想を生む。環境を変えることの大切さを表すシンプルで覚えやすい表現。" },
       { "phrase": "Switch off", "desc": "仕事モードをオフにする・気持ちを切り替える。物理的なスイッチのように頭を休ませるときに使う比喩表現。" }
     ]
+  },
+  {
+    "title": "Language & Learning",
+    "subtitle": "Japanese, Mistakes & Language Exchange",
+    "badge": "言語",
+    "sceneLabel": "Izakaya / Language Learners & Cultural Bridges",
+    "dialogue": [
+      { "speaker": "Kaito",  "text": "Can I ask — how long have you both been studying Japanese? Your pronunciation earlier was really impressive, Sophie." },
+      { "speaker": "Sophie", "text": "Thank you! About two years on and off. I use an app on my commute, but honestly, nothing beats being here and actually using it." },
+      { "speaker": "Ben",    "text": "I've been at it for six months and I still feel like I'm getting nowhere. The writing systems alone — I keep mixing up hiragana and katakana." },
+      { "speaker": "Kaito",  "text": "Don't be too hard on yourself. Japanese is genuinely one of the harder languages for English speakers. Even small effort goes a long way here — people really appreciate it." },
+      { "speaker": "Sophie", "text": "That's been my experience too. Even just saying sumimasen in a shop — people's faces light up. It breaks the ice instantly." },
+      { "speaker": "Ben",    "text": "I tried to order at a ramen place yesterday using only Japanese. I stumbled through it, but I got the right bowl. I felt like I'd climbed a mountain." },
+      { "speaker": "Kaito",  "text": "Ha! That's the spirit. Making mistakes in front of people takes courage. I went through the same thing when I first started speaking English — I was terrified of saying the wrong thing." },
+      { "speaker": "Sophie", "text": "What helped you get over that?" },
+      { "speaker": "Kaito",  "text": "Honestly? Just accepting that I was going to sound awkward for a while. Once I stopped trying to be perfect, I started actually making progress." },
+      { "speaker": "Ben",    "text": "That's easier said than done when you're in a meeting and everyone's waiting for you to finish a sentence." },
+      { "speaker": "Kaito",  "text": "True. But here's what I've noticed — most people are rooting for you. They want you to get your point across. They're not judging the grammar, they're listening for the meaning." },
+      { "speaker": "Sophie", "text": "That's such a good reframe. I think I put a lot of pressure on myself to sound native, but that's not really the goal, is it?" },
+      { "speaker": "Kaito",  "text": "Not at all. The goal is connection. If the other person understands you and you understand them, the language has done its job." },
+      { "speaker": "Ben",    "text": "I like that. I think I'll go back to basics and just focus on making myself understood rather than sounding impressive." },
+      { "speaker": "Kaito",  "text": "That's the mindset. And for what it's worth — both of you communicate better in Japanese than most visitors I meet. Keep at it. Now, shall we order in Japanese this time?" }
+    ],
+    "vocab": [
+      { "phrase": "On and off", "desc": "断続的に・ときどき。継続はしていないけど、やめてもいない状態を表す便利な表現。" },
+      { "phrase": "Nothing beats ~", "desc": "〜に勝るものはない。何かが最高だと強調するときのカジュアルで力強い言い回し。" },
+      { "phrase": "Don't be too hard on yourself.", "desc": "自分を責めすぎないで。落ち込んでいる相手を励ますときの温かいひと言。" },
+      { "phrase": "It breaks the ice.", "desc": "場の緊張をほぐす・打ち解けるきっかけになる。初対面や気まずい空気を和らげるときに使う慣用表現。" },
+      { "phrase": "I stumbled through it.", "desc": "たどたどしくやりました。うまくはなかったけど、なんとかできたというニュアンスを持つ自然な表現。" },
+      { "phrase": "Most people are rooting for you.", "desc": "ほとんどの人はあなたを応援しています。root for は〜を応援するという意味の定番フレーズ。" },
+      { "phrase": "Get your point across", "desc": "言いたいことを伝える・意図を理解してもらう。言語や状況を問わず使えるコミュニケーションの核心的な表現。" },
+      { "phrase": "Keep at it.", "desc": "続けてください・あきらめずに。短くてシンプルだが、非常に励みになる応援のフレーズ。" }
+    ]
   }
 ]
