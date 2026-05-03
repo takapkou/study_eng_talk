@@ -1,0 +1,260 @@
+[
+  {
+    "title": "Izakaya Dialogue",
+    "subtitle": "Welcome & First Drinks",
+    "badge": "初来日",
+    "sceneLabel": "Night Out / Izakaya with Overseas Team Members",
+    "dialogue": [
+      { "speaker": "Yuki", "text": "Welcome to Japan! I'm glad you both made it safely. This is a classic izakaya — kind of like a Japanese pub." },
+      { "speaker": "Alex", "text": "Wow, it looks amazing in here! I've always wanted to try a real izakaya. What do you recommend?" },
+      { "speaker": "Sara", "text": "Same here. I'm not sure what to order. Can you help us out?" },
+      { "speaker": "Yuki", "text": "Of course! Let's start with some drinks. Do you prefer beer, sake, or maybe a non-alcoholic option?" },
+      { "speaker": "Alex", "text": "I'll go with a beer. When in Rome, right? Or I guess, when in Japan!" },
+      { "speaker": "Sara", "text": "I'd like to try sake if that's okay. I've heard it goes really well with Japanese food." },
+      { "speaker": "Yuki", "text": "Great choices! Let's order some food too. I'd suggest the yakitori, edamame, and karaage to start. They're all pretty popular." },
+      { "speaker": "Alex", "text": "Sounds good to me. By the way, what is karaage exactly? Is it similar to fried chicken?" },
+      { "speaker": "Yuki", "text": "Yes, exactly! It's Japanese fried chicken, usually marinated in soy sauce and ginger. You'll love it, I promise." },
+      { "speaker": "Sara", "text": "That sounds delicious. I should mention that I don't eat red meat. Is that going to be a problem here?" },
+      { "speaker": "Yuki", "text": "No problem at all! We have plenty of options — tofu, grilled fish, and lots of vegetables. I'll let the server know." },
+      { "speaker": "Alex", "text": "This is so much fun. I really appreciate you taking the time to show us around, Yuki." },
+      { "speaker": "Yuki", "text": "My pleasure! Okay, the drinks are here. Let's raise our glasses — cheers, or as we say in Japanese, Kanpai!" },
+      { "speaker": "Alex", "text": "Kanpai! This is going to be a great trip." },
+      { "speaker": "Sara", "text": "Kanpai! Thank you so much, Yuki. We're really happy to be here." }
+    ],
+    "vocab": [
+      { "phrase": "I'd suggest ~ / I'd recommend ~", "desc": "〜をおすすめします。食事・観光・仕事など、何かを提案するときに使える万能フレーズ。" },
+      { "phrase": "Can you help us out?", "desc": "助けてもらえますか？help me よりも自然でカジュアルな頼み方。チームでの会話にもぴったり。" },
+      { "phrase": "When in Rome!", "desc": "郷に入れば郷に従え。その場の文化や慣習に合わせるときに使うユーモアのある表現。" },
+      { "phrase": "I should mention that ~", "desc": "〜をお伝えしておきたいのですが。食事制限やアレルギーを丁寧に伝えるときに便利。" },
+      { "phrase": "No problem at all!", "desc": "全然大丈夫です！相手の心配を払拭する気持ちのいい一言。Don't worry よりも積極的なニュアンス。" },
+      { "phrase": "I'll let ~ know", "desc": "〜に伝えておきます。店員に言っておくなど幅広い場面で使える。" },
+      { "phrase": "My pleasure!", "desc": "どういたしまして / 喜んで！You're welcome よりも温かみのある返し方。" },
+      { "phrase": "Let's raise our glasses", "desc": "乾杯しましょう。Cheers! の前に使うと、より丁寧でパーティらしい雰囲気が出る。" }
+    ]
+  },
+  {
+    "title": "Ordering Food & Drinks",
+    "subtitle": "Menu, Yakitori & Takoyaki",
+    "badge": "注文",
+    "sceneLabel": "Izakaya / Ordering & Trying Japanese Dishes",
+    "dialogue": [
+      { "speaker": "Kenji", "text": "Okay, the menu is here. There's a lot to choose from. Do you want me to walk you through it?" },
+      { "speaker": "Mike",  "text": "Yes, please! I can't read the kanji, so I'm a little lost. What's good here?" },
+      { "speaker": "Kenji", "text": "This place is known for its grilled skewers — yakitori. We can get a mix of chicken, vegetables, and mushrooms." },
+      { "speaker": "Emma",  "text": "Oh, that sounds great. Are the portions small? I want to try as many dishes as possible." },
+      { "speaker": "Kenji", "text": "Yes, they're meant for sharing. That's the best part of an izakaya — you order a little bit of everything." },
+      { "speaker": "Mike",  "text": "I love that idea. Let's go for it. Should we get another round of drinks too?" },
+      { "speaker": "Kenji", "text": "Definitely. Excuse me! Could we get two more beers and one more sake, please?" },
+      { "speaker": "Emma",  "text": "Kenji, what's that dish over there? The one that looks crispy. It smells amazing." },
+      { "speaker": "Kenji", "text": "That's takoyaki — octopus balls. They're a street food originally from Osaka. Want to give it a try?" },
+      { "speaker": "Emma",  "text": "Octopus? That's a bit out of my comfort zone, but sure, I'll give it a shot!" },
+      { "speaker": "Mike",  "text": "Ha, good for you! I'll try it too. How do you eat it? Just pick it up?" },
+      { "speaker": "Kenji", "text": "Yes, use the toothpick. And be careful — they're really hot inside. Blow on it first." },
+      { "speaker": "Emma",  "text": "Wow, this is actually really good! I can't believe I almost said no to this." },
+      { "speaker": "Mike",  "text": "Agreed! Kenji, you have to come visit us next time. We'll take you out for dinner too." },
+      { "speaker": "Kenji", "text": "I'd love that! Alright, the yakitori is coming. Let's dig in!" }
+    ],
+    "vocab": [
+      { "phrase": "Do you want me to walk you through it?", "desc": "一緒に説明しましょうか？メニュー・資料など、何かを順番に案内するときの定番フレーズ。" },
+      { "phrase": "I'm a little lost.", "desc": "ちょっとわからなくて困っています。道だけでなく、説明が理解できないときにも使える自然な表現。" },
+      { "phrase": "They're meant for sharing.", "desc": "シェアするためのものです。〜はこういう目的で作られていると説明するときに便利。" },
+      { "phrase": "Should we get ~?", "desc": "〜はどうしますか？グループで何かを決めるときに使う、やわらかい提案の言い方。" },
+      { "phrase": "That's a bit out of my comfort zone.", "desc": "ちょっと慣れていないことで。新しいことに挑戦するときの素直な気持ちを伝えるフレーズ。" },
+      { "phrase": "I'll give it a shot!", "desc": "やってみます！I'll try it よりも元気でポジティブなニュアンス。" },
+      { "phrase": "I can't believe I almost said no to this.", "desc": "断らなくてよかった！予想外においしかったときの感動を伝える表現。" },
+      { "phrase": "Let's dig in!", "desc": "さあ、食べよう！食事が来たときのいただきます的なカジュアルな表現。" }
+    ]
+  },
+  {
+    "title": "Wrapping Up the Night",
+    "subtitle": "Bill, Karaoke & Goodbye",
+    "badge": "お会計",
+    "sceneLabel": "Izakaya / Paying the Bill & Saying Goodbye",
+    "dialogue": [
+      { "speaker": "Chris", "text": "That was such a great meal. I think I ate way too much though!" },
+      { "speaker": "Lily",  "text": "Same! The food just kept coming. Hana, this place was such a good pick. Thank you for bringing us here." },
+      { "speaker": "Hana",  "text": "I'm so glad you enjoyed it! This is one of my favorite spots. Shall we ask for the bill?" },
+      { "speaker": "Chris", "text": "Yes, let's do that. By the way, how does paying work here? Do we split it, or is it all together?" },
+      { "speaker": "Hana",  "text": "Either works. We can split it evenly if you want. But tonight is on me — you're our guests!" },
+      { "speaker": "Lily",  "text": "Oh, that's really kind of you, but we can't let you pay for everything. Let us at least cover the drinks." },
+      { "speaker": "Hana",  "text": "Don't worry about it! Next time you're in town, I'll let you treat me. Deal?" },
+      { "speaker": "Chris", "text": "Deal! You've got yourself a free dinner next time you visit us. We'll take good care of you." },
+      { "speaker": "Hana",  "text": "I'll hold you to that! Okay, I paid. Ready to head out?" },
+      { "speaker": "Lily",  "text": "Yes, but I don't want the night to end! What do people usually do after izakaya?" },
+      { "speaker": "Hana",  "text": "Some people go to a karaoke bar! It's right around the corner. Are you up for it?" },
+      { "speaker": "Chris", "text": "Karaoke?! I haven't done that in years. Count me in!" },
+      { "speaker": "Lily",  "text": "Fair warning — I'm a terrible singer. But I'll give it my best shot!" },
+      { "speaker": "Hana",  "text": "Ha! That's the spirit. Nobody cares how well you sing at karaoke. Let's go have fun!" }
+    ],
+    "vocab": [
+      { "phrase": "Shall we ~?", "desc": "〜しましょうか？Should we ~? よりもやや丁寧で自然な提案表現。" },
+      { "phrase": "Tonight is on me.", "desc": "今夜は私のおごりです。I'll pay よりもカジュアルで温かい言い方。" },
+      { "phrase": "We can't let you pay for everything.", "desc": "全部払わせるわけにはいきません。相手の厚意を断って費用を分担しようとするときの丁寧な断り方。" },
+      { "phrase": "Deal?", "desc": "約束ですよ？提案に合意を求めるカジュアルな一言。相手も Deal! と返すのがセット。" },
+      { "phrase": "I'll hold you to that!", "desc": "その言葉、忘れませんよ！約束を冗談っぽく念押しするときの表現。" },
+      { "phrase": "Are you up for it?", "desc": "やる気ある？何かに誘うときのカジュアルな聞き方。" },
+      { "phrase": "Count me in!", "desc": "参加します！自分も加えてほしいと積極的に伝える定番フレーズ。" },
+      { "phrase": "That's the spirit!", "desc": "その意気です！相手が前向きな姿勢を見せたときに使う励ましの言葉。" }
+    ]
+  },
+  {
+    "title": "Deep Talk: Japan & Culture",
+    "subtitle": "Shokunin, Omotenashi & Sento",
+    "badge": "日本通",
+    "sceneLabel": "Izakaya / Japan Lover's Deep Conversation",
+    "dialogue": [
+      { "speaker": "Ryan",   "text": "You know, I've been coming to Japan for five years now, but this is my first time in a place like this — no English menu, no tourist photos. This is the real deal." },
+      { "speaker": "Natsuki","text": "Ha! Most tourists don't even know this neighborhood exists. I'm glad you're open to this kind of place." },
+      { "speaker": "Priya",  "text": "Honestly, every time I visit Japan, I find something new that I love. Last time it was sento — public baths. This time I want to try more local food spots like this one." },
+      { "speaker": "Natsuki","text": "I love that you already know about sento! Most people skip those. What drew you to it?" },
+      { "speaker": "Priya",  "text": "A colleague back home mentioned it. She said it's less about bathing and more about slowing down. She was totally right — I sat in that hot water for an hour and forgot about everything." },
+      { "speaker": "Ryan",   "text": "That's what gets me about Japan. There's this idea of doing one thing really well — whether it's a bowl of ramen or a cup of tea. It's almost like a philosophy." },
+      { "speaker": "Natsuki","text": "You're thinking of shokunin culture — the idea that a craftsman devotes their life to mastering one skill. It shows up in everything from sushi chefs to carpenters." },
+      { "speaker": "Ryan",   "text": "Yes, exactly! That concept really resonates with me. I think about it a lot in my own work — am I going deep enough, or just spreading myself too thin?" },
+      { "speaker": "Priya",  "text": "That's such a good question. I feel the same pressure back home — do more, move faster. Being here kind of puts things in perspective." },
+      { "speaker": "Natsuki","text": "I never thought about it from the outside before. It's interesting to hear how Japan looks from a foreigner's point of view. You notice things we take for granted." },
+      { "speaker": "Ryan",   "text": "Like the way everyone lines up perfectly at the train station. Or how the food here came out in exactly the right order without us asking. Small things, but they add up." },
+      { "speaker": "Natsuki","text": "We call that omotenashi — hospitality that anticipates your needs before you even say anything. I'm happy it still shows up in places like this." },
+      { "speaker": "Priya",  "text": "Omotenashi. I'm going to remember that word. Honestly, I think Japan has made me a better host back home. I pay much more attention to the little details now." },
+      { "speaker": "Natsuki","text": "That might be the best thing I've heard all night. Okay — more drinks? I think we've earned another round." }
+    ],
+    "vocab": [
+      { "phrase": "This is the real deal.", "desc": "これこそ本物だ。本格的なものに出会ったときの感嘆フレーズ。" },
+      { "phrase": "That concept really resonates with me.", "desc": "そのコンセプト、すごく共感します。I agree よりも深い共鳴・感動を伝える知的な表現。" },
+      { "phrase": "Spreading myself too thin", "desc": "あれもこれもやりすぎて手が回らない状態。仕事の優先順位について話すときに使える慣用表現。" },
+      { "phrase": "It puts things in perspective.", "desc": "物事を俯瞰できるようになる・視野が広がる。体験によって大切なことが見えてきたときに使う。" },
+      { "phrase": "Things we take for granted", "desc": "当たり前だと思っていること。慣れすぎて気づかなくなっているものを指す定番フレーズ。" },
+      { "phrase": "Small things, but they add up.", "desc": "小さなことだけど、積み重なると大きい。細部へのこだわりの価値を伝えるときに使える。" },
+      { "phrase": "I pay much more attention to ~ now.", "desc": "今は〜にずっと気を配るようになった。体験を通じて変わった自分の習慣を伝えるときに使える。" },
+      { "phrase": "I think we've earned another round.", "desc": "もう一杯飲む資格があると思う（笑）。もう一杯を冗談っぽく提案するユーモアのある言い回し。" }
+    ]
+  },
+  {
+    "title": "Hidden Gems & Tips",
+    "subtitle": "Local Trains, Conbini & Japan Hangover",
+    "badge": "穴場",
+    "sceneLabel": "Izakaya / Insider Tips & Life in Japan",
+    "dialogue": [
+      { "speaker": "Mei",    "text": "Oh, that's easy. Take a local train out of the city — not the shinkansen, just a regular slow train — and get off somewhere random. That's where the real Japan is." },
+      { "speaker": "Jordan", "text": "That's exactly the kind of thing I'm after. I feel like I've done the big cities — Tokyo, Kyoto. I want something more off the beaten path this time." },
+      { "speaker": "Sofia",  "text": "I did something like that last year — ended up in a tiny town that wasn't in any guidebook. Found this incredible family-run soba restaurant. I still think about it." },
+      { "speaker": "Mei",    "text": "Have you been to the Noto Peninsula? It's stunning and still pretty quiet. People there are so warm." },
+      { "speaker": "Sofia",  "text": "I've heard about that. It's on my list for sure. By the way, Mei — what do you miss most when you're not in Japan?" },
+      { "speaker": "Mei",    "text": "Honestly? The convenience stores. I know that sounds funny, but a good conbini at midnight when you're tired — there's nothing like it anywhere else in the world." },
+      { "speaker": "Jordan", "text": "Ha! That actually makes complete sense. I grabbed a chicken sandwich from 7-Eleven here last night, and it was honestly better than most cafes back home." },
+      { "speaker": "Sofia",  "text": "The bar is just higher here for everyday things. I think that's what keeps drawing me back — the standard of care in small things is just different." },
+      { "speaker": "Mei",    "text": "You both get it. A lot of visitors never quite put their finger on it, but that's exactly what it is. It's not one big thing — it's thousands of small ones done right." },
+      { "speaker": "Jordan", "text": "That's why I always feel a little restless when I get back home. Like something's slightly off. Does that sound dramatic?" },
+      { "speaker": "Sofia",  "text": "Not at all. I call it the Japan hangover. You come back and everything feels a little noisier and a little messier for a while." },
+      { "speaker": "Mei",    "text": "The Japan hangover — I love that. You know, hearing you both say this makes me really proud. I think I needed the reminder to appreciate where I'm from." },
+      { "speaker": "Jordan", "text": "Well, we're very grateful to have a local guide. Same time next year? I'm already looking forward to it." },
+      { "speaker": "Mei",    "text": "You don't even have to ask. I'll keep a seat warm for you right here at this very table." }
+    ],
+    "vocab": [
+      { "phrase": "What's the one thing I should ~ that most people miss?", "desc": "ほとんどの人が見逃す、絶対やるべきことは何ですか？地元の人におすすめを聞くときの定番フレーズ。" },
+      { "phrase": "Off the beaten path", "desc": "人があまり行かない場所・観光地以外のところ。ガイドブックに載っていないような穴場を探すときに使う。" },
+      { "phrase": "That's exactly what I'm after.", "desc": "それがまさに求めているものです。提案がぴったりはまったときに使える自然な返し方。" },
+      { "phrase": "The bar is just higher here.", "desc": "ここは基準・水準が高い。品質やサービスのレベルを比較して語るときに使えるシンプルな表現。" },
+      { "phrase": "Never quite put their finger on it", "desc": "うまく言葉にできない。何となく感じているが言語化できないものを表現するときに使う。" },
+      { "phrase": "Does that sound dramatic?", "desc": "大げさに聞こえますか？自分の感情が強すぎないか確認する、会話を和らげるための一言。" },
+      { "phrase": "I needed the reminder to ~", "desc": "〜することを改めて気づかせてもらいました。他者の言葉から大切なことを再認識したときの感謝の表現。" },
+      { "phrase": "I'll keep a seat warm for you.", "desc": "いつでも待っています。また来てほしいという温かい気持ちを伝える比喩的な表現。" }
+    ]
+  },
+  {
+    "title": "Anime Talk",
+    "subtitle": "Ghibli, Shokunin & Recommendations",
+    "badge": "アニメ",
+    "sceneLabel": "Izakaya / Anime Fans Go Deep",
+    "dialogue": [
+      { "speaker": "Dan",    "text": "Okay, I have to ask — we're sitting here in Japan, in an izakaya, drinking sake. Did anyone else feel like they just walked into an anime scene?" },
+      { "speaker": "Aisha",  "text": "Oh, one hundred percent. I kept thinking of Shirobako earlier today — all those little side streets reminded me of the backgrounds in the show." },
+      { "speaker": "Tomoya", "text": "Ha! I love that you know Shirobako. That's not a title most overseas fans pick up. How did you find it?" },
+      { "speaker": "Aisha",  "text": "A friend recommended it after I said I wanted to understand how anime is actually made. It completely changed how I watch everything now — I notice so much more detail." },
+      { "speaker": "Dan",    "text": "Same for me with Ping Pong the Animation. I didn't expect a sports anime to hit that hard emotionally. The art style threw me off at first, but by episode three I was totally hooked." },
+      { "speaker": "Tomoya", "text": "That's a classic. Masaaki Yuasa has a way of making you feel things you didn't expect. His work doesn't look like typical anime, but that's exactly the point." },
+      { "speaker": "Aisha",  "text": "Can I ask something? I've always been curious — do people here actually watch anime, or is it more of an overseas thing?" },
+      { "speaker": "Tomoya", "text": "It's a fair question. Plenty of people here watch it, but some treat it as a niche thing — kind of like how comic book fans are seen in some countries. It really depends on who you ask." },
+      { "speaker": "Dan",    "text": "That's interesting. Back home, anime has gone pretty mainstream. My younger cousins who don't even know Japan well can name five Ghibli films off the top of their head." },
+      { "speaker": "Tomoya", "text": "Ghibli is its own thing, really. My grandmother loves Totoro. It cuts across age groups in a way that most anime doesn't. It's more like cinema than animation to a lot of people here." },
+      { "speaker": "Aisha",  "text": "That's such a good way to put it. I think what draws me to anime is that it takes storytelling seriously. It doesn't talk down to the audience the way some Western animation does." },
+      { "speaker": "Dan",    "text": "Totally agree. And the emotional range is just wider. A show can be funny, heartbreaking, and philosophical all in one episode. It keeps you on your toes." },
+      { "speaker": "Tomoya", "text": "It makes me really happy to hear that. Since we're on the topic, what's your number one recommendation for someone new to anime?" },
+      { "speaker": "Aisha",  "text": "Tough call, but I'd say A Silent Voice. It's emotional, beautifully made, and it doesn't need any background knowledge to connect with it." },
+      { "speaker": "Dan",    "text": "Mine would be Spirited Away — it drops you into a world with no explanation and trusts you to keep up. That's still one of the bravest things I've ever seen in any kind of film." },
+      { "speaker": "Tomoya", "text": "Both great picks. You know, this conversation is making me want to rewatch everything. Let's order one more round and keep going." }
+    ],
+    "vocab": [
+      { "phrase": "One hundred percent.", "desc": "完全同意！Absolutely や Totally と同じ意味で、強く同意するときのカジュアルな返し方。" },
+      { "phrase": "It completely changed how I ~ now.", "desc": "〜の仕方が完全に変わりました。ある体験・作品が自分に与えた影響を伝えるときの自然な表現。" },
+      { "phrase": "It threw me off at first, but ~", "desc": "最初は戸惑ったけど〜。throw off は戸惑わせるの意味。第一印象と後の評価が違うときに使える。" },
+      { "phrase": "I was totally hooked.", "desc": "完全にハマってしまいました。夢中になった・引き込まれたときに使うカジュアルな表現。" },
+      { "phrase": "It depends on who you ask.", "desc": "聞く人によって違います。意見が分かれるテーマで一概には言えないと伝えるときの便利な一言。" },
+      { "phrase": "Off the top of their head", "desc": "何も調べずに・すぐに思いつきで。知識や記憶をその場でさっと出せるときに使う表現。" },
+      { "phrase": "It keeps you on your toes.", "desc": "気が抜けない・油断できない。次に何が起こるかわからないスリルや緊張感を表すイディオム。" },
+      { "phrase": "Tough call, but I'd say ~", "desc": "難しいけど、あえて言うなら〜。迷いながらも答えを選ぶときの自然な言い回し。" }
+    ]
+  },
+  {
+    "title": "Music Talk",
+    "subtitle": "City Pop, Jazz Bars & Japanese Music",
+    "badge": "音楽",
+    "sceneLabel": "Izakaya / Japanese Music & City Pop",
+    "dialogue": [
+      { "speaker": "Haruki", "text": "You were humming something earlier. Was that a Japanese song?" },
+      { "speaker": "Lena",   "text": "Ha, you caught me! It was Plastic Love by Mariya Takeuchi. I've been obsessed with city pop lately." },
+      { "speaker": "Haruki", "text": "No way! That song had such a crazy resurgence online. I was surprised how many overseas fans discovered it through YouTube." },
+      { "speaker": "Dev",    "text": "Same for me. The algorithm just dropped it on me one night and I went down a rabbit hole for hours. Tatsuro Yamashita, Anri — I couldn't stop." },
+      { "speaker": "Lena",   "text": "There's something about the production — that warm, slightly retro sound. It feels nostalgic for a time and place I've never actually lived in." },
+      { "speaker": "Haruki", "text": "That's exactly how a lot of Japanese people feel too. It captures a kind of 80s optimism that people look back on fondly, even if they weren't alive then." },
+      { "speaker": "Dev",    "text": "Do people here still listen to it, or is it more of a nostalgia thing for older generations?" },
+      { "speaker": "Haruki", "text": "Both, honestly. Younger people have rediscovered it, partly thanks to the internet. There are jazz bars in Tokyo where they play this kind of music all night." },
+      { "speaker": "Lena",   "text": "Wait — jazz bars? That is going on my itinerary immediately. Can you recommend one?" },
+      { "speaker": "Haruki", "text": "Sure! There's a great one in Shimokitazawa. Very low-key, vinyl records only, cash only. It's the kind of place where nobody talks too loud." },
+      { "speaker": "Dev",    "text": "I love that. Sometimes the best experiences are the ones you stumble into with no expectations. This whole trip has been like that." },
+      { "speaker": "Lena",   "text": "Totally. And music is such a good gateway into a culture. I feel like I understand something about Japan better just from listening to city pop." },
+      { "speaker": "Haruki", "text": "That might be the most thoughtful thing anyone has said to me about Japanese music. I'll make you both a playlist tonight." }
+    ],
+    "vocab": [
+      { "phrase": "I went down a rabbit hole.", "desc": "どんどん深みにはまってしまいました。何かに夢中になって次々と調べ続ける状態を表す定番表現。" },
+      { "phrase": "Nostalgic for a time I've never lived in", "desc": "経験したことのない時代への郷愁。自分が生まれる前の時代や場所に懐かしさを感じるときに使える詩的な表現。" },
+      { "phrase": "Look back on ~ fondly", "desc": "〜を懐かしく振り返る。過去の出来事や時代を温かい気持ちで思い出すときに使う。" },
+      { "phrase": "That is going on my itinerary immediately.", "desc": "すぐに予定に入れます！誰かの提案にすごく乗り気なときの即断的な返し方。" },
+      { "phrase": "Low-key", "desc": "落ち着いた・控えめな・派手じゃない。雰囲気やスタイルを説明するときのカジュアルな形容表現。" },
+      { "phrase": "The kind of place where ~", "desc": "〜であるような場所。場所の雰囲気や特徴を具体的に説明するときに使える便利な構文。" },
+      { "phrase": "Stumble into ~ with no expectations", "desc": "何も期待せずに偶然出会う。予想外に良い体験をしたときの言い方。" },
+      { "phrase": "A gateway into ~", "desc": "〜への入り口・きっかけ。何かを理解するための入口になるものを表すときに使う比喩的な表現。" }
+    ]
+  },
+  {
+    "title": "Work & Life Balance",
+    "subtitle": "Remote Work, Career & Japanese Work Culture",
+    "badge": "仕事",
+    "sceneLabel": "Izakaya / Work Culture & Life Balance",
+    "dialogue": [
+      { "speaker": "Yui",    "text": "Can I ask you something? You both work remotely from different countries. Do you ever feel like you're missing out on office culture?" },
+      { "speaker": "Marcus", "text": "Honestly, sometimes. The spontaneous conversations over coffee — you can't really replicate that on a video call. But I've stopped feeling guilty about it." },
+      { "speaker": "Chloe",  "text": "Same. I think remote work taught me to be much more intentional about communication. You can't rely on osmosis anymore — you have to actually reach out." },
+      { "speaker": "Yui",    "text": "That's interesting. Here, there's still a strong culture of being physically present — staying late, going out with your team like this. It's slowly changing, but old habits die hard." },
+      { "speaker": "Marcus", "text": "Do you feel pressure to stay late even when the work is done?" },
+      { "speaker": "Yui",    "text": "Sometimes. There's a word for it — karoshi — overwork to the point of burnout. It's a real issue and people are more aware of it now, but the pressure is still there." },
+      { "speaker": "Chloe",  "text": "We have a version of that too — hustle culture. The idea that if you're not grinding, you're falling behind. I had to actively unlearn that mindset." },
+      { "speaker": "Marcus", "text": "What helped me was getting clear on what I actually want from my career, not just what looks impressive. Easier said than done, though." },
+      { "speaker": "Yui",    "text": "I think being here tonight, talking like this — it's a reminder that work is one part of life, not the whole thing. That's easy to forget in the day-to-day." },
+      { "speaker": "Chloe",  "text": "Exactly. And ironically, I do some of my best thinking when I step away from my desk. This trip has already given me three new ideas." },
+      { "speaker": "Marcus", "text": "That's the thing about getting out of your routine. New inputs lead to new outputs." },
+      { "speaker": "Yui",    "text": "I like that. Okay — enough about work. We're at an izakaya. Let's order one more round and actually switch off for the rest of the night." },
+      { "speaker": "Chloe",  "text": "Now that is the best idea anyone has had all evening." }
+    ],
+    "vocab": [
+      { "phrase": "Missing out on ~", "desc": "〜を逃している・体験できていない。FOMO（取り残される不安）を表すときにもよく使われる表現。" },
+      { "phrase": "I've stopped feeling guilty about it.", "desc": "それに罪悪感を感じるのをやめました。以前は気にしていたが、今は受け入れているというニュアンスの成長表現。" },
+      { "phrase": "Intentional about ~", "desc": "〜に対して意識的・目的を持って取り組む。なんとなくではなく、きちんと考えて行動するときに使う。" },
+      { "phrase": "Old habits die hard.", "desc": "昔の習慣はなかなか変わらない。慣れ親しんだやり方や文化がすぐには変わらないことを表すことわざ。" },
+      { "phrase": "Easier said than done.", "desc": "言うは易く行うは難し。理論ではわかっていても実践は難しいというときの定番フレーズ。" },
+      { "phrase": "Unlearn ~", "desc": "〜を意識的に忘れる・手放す。間違って覚えたことや不要になった考え方を捨てる努力を表す。" },
+      { "phrase": "New inputs lead to new outputs.", "desc": "新しい刺激が新しい発想を生む。環境を変えることの大切さを表すシンプルで覚えやすい表現。" },
+      { "phrase": "Switch off", "desc": "仕事モードをオフにする・気持ちを切り替える。物理的なスイッチのように頭を休ませるときに使う比喩表現。" }
+    ]
+  }
+]

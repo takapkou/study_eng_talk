@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Izakaya English</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161a22;
+    --surface2: #1c2130;
+    --border: #232838;
+    --accent: #e8c97a;
+    --accent2: #7a9ee8;
+    --text: #e8e6e0;
+    --muted: #6b7280;
+    --col-a: #e8c97a;
+    --col-b: #7a9ee8;
+    --col-c: #7ae8a0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 10% 10%, rgba(232,201,122,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 90%, rgba(122,158,232,0.05) 0%, transparent 50%);
+  }
+
+  /* ── LOADING ── */
+  #loadingScreen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .loading-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1s ease-in-out infinite;
+  }
+  .loading-text { font-size: 11px; color: var(--muted); letter-spacing: 0.2em; }
+
+  /* ── HOME ── */
+  #homeScreen {
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 60px;
+  }
+  #homeScreen.active { display: flex; }
+
+  .app-header { text-align: center; margin-bottom: 48px; }
+  .app-label { font-size: 10px; letter-spacing: 0.4em; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
+  .app-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--text); line-height: 1.15; }
+  .app-title span { color: var(--accent); font-style: italic; }
+  .app-subtitle { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-top: 10px; }
+
+  .scene-grid { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 12px; }
+
+  .scene-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 22px; cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 18px;
+    position: relative; overflow: hidden;
+  }
+  .scene-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--accent); opacity: 0; transition: opacity 0.2s;
+  }
+  .scene-card:hover { background: var(--surface2); border-color: rgba(232,201,122,0.3); transform: translateX(3px); }
+  .scene-card:hover::before { opacity: 1; }
+
+  .scene-num {
+    font-family: 'Playfair Display', serif; font-size: 28px;
+    color: var(--border); font-weight: 700; min-width: 36px; line-height: 1; transition: color 0.2s;
+  }
+  .scene-card:hover .scene-num { color: var(--accent); }
+
+  .scene-info { flex: 1; }
+  .scene-tag { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .scene-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .scene-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+  .scene-arrow { color: var(--muted); font-size: 16px; transition: all 0.2s; }
+  .scene-card:hover .scene-arrow { color: var(--accent); transform: translateX(3px); }
+
+  .scene-badge {
+    font-size: 9px; background: rgba(232,201,122,0.1); border: 1px solid rgba(232,201,122,0.2);
+    color: var(--accent); border-radius: 4px; padding: 2px 7px;
+    letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .play-count { font-size: 9px; color: var(--muted); letter-spacing: 0.08em; display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+  .play-count.has-plays { color: var(--accent); }
+  .play-count-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: 0.6; }
+
+  /* ── PLAYER ── */
+  #playerScreen {
+    display: none; min-height: 100vh; flex-direction: column;
+    align-items: center; padding: 24px 20px 60px;
+  }
+  #playerScreen.active { display: flex; }
+
+  .player-nav { width: 100%; max-width: 640px; display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .back-btn {
+    background: none; border: 1px solid var(--border); color: var(--muted); cursor: pointer;
+    border-radius: 8px; font-family: 'DM Mono', monospace; font-size: 11px; padding: 8px 14px;
+    letter-spacing: 0.05em; transition: all 0.18s; display: flex; align-items: center; gap: 6px;
+  }
+  .back-btn:hover { background: rgba(255,255,255,0.04); color: var(--text); border-color: var(--muted); }
+  .nav-title { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; }
+
+  .player-header { width: 100%; max-width: 640px; margin-bottom: 20px; }
+  .player-label { font-size: 9px; letter-spacing: 0.3em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .player-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--text); }
+  .player-title span { color: var(--accent); }
+
+  .scene-play-card {
+    width: 100%; max-width: 640px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-bottom: 16px;
+  }
+  .play-scene-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+
+  .lines { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+  .line {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 12px; border-radius: 8px; cursor: pointer;
+    border: 1px solid transparent; transition: all 0.2s;
+  }
+  .line:hover { background: rgba(255,255,255,0.03); border-color: var(--border); }
+  .line.active       { background: rgba(232,201,122,0.06); border-color: rgba(232,201,122,0.25); }
+  .line.active.spk-1 { background: rgba(122,158,232,0.06); border-color: rgba(122,158,232,0.25); }
+  .line.active.spk-2 { background: rgba(122,232,160,0.06); border-color: rgba(122,232,160,0.25); }
+
+  .speaker { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; min-width: 54px; margin-top: 1px; }
+  .spk-0 .speaker { color: var(--col-a); }
+  .spk-1 .speaker { color: var(--col-b); }
+  .spk-2 .speaker { color: var(--col-c); }
+
+  .line-text { font-size: 13.5px; line-height: 1.65; color: var(--text); flex: 1; }
+  .play-btn-inline {
+    opacity: 0; background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: 14px; padding: 2px 4px;
+    transition: opacity 0.15s; flex-shrink: 0;
+  }
+  .line:hover .play-btn-inline, .line.active .play-btn-inline { opacity: 1; }
+
+  .progress-bar { height: 2px; background: var(--border); border-radius: 2px; margin-bottom: 20px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.3s ease; width: 0%; }
+
+  .controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .ctrl-group { display: flex; align-items: center; gap: 8px; }
+  .btn {
+    background: none; border: 1px solid var(--border); color: var(--text);
+    cursor: pointer; border-radius: 8px; font-family: 'DM Mono', monospace;
+    font-size: 11px; padding: 8px 14px; letter-spacing: 0.05em;
+    transition: all 0.18s; display: flex; align-items: center; gap: 6px;
+  }
+  .btn:hover { background: rgba(255,255,255,0.05); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #0d0f14; font-weight: 500; }
+  .btn.primary:hover { background: #f0d68a; }
+  .btn.primary.playing { background: #e87a7a; border-color: #e87a7a; }
+  .btn.icon-btn { padding: 8px 10px; }
+  .btn.loop-on { color: var(--accent); border-color: var(--accent); background: rgba(232,201,122,0.08); }
+
+  .speed-control { display: flex; align-items: center; gap: 6px; }
+  .speed-label { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; }
+  .speed-select {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    font-family: 'DM Mono', monospace; font-size: 11px; padding: 6px 8px;
+    border-radius: 6px; cursor: pointer; outline: none;
+  }
+
+  .status-bar { margin-top: 16px; display: flex; align-items: center; justify-content: space-between; }
+  .status-text { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--muted); margin-right: 6px; vertical-align: middle; }
+  .dot.speaking { background: var(--accent); animation: blink 0.8s ease-in-out infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+  @keyframes pulse  { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .loop-badge { font-size: 10px; color: var(--accent); letter-spacing: 0.1em; opacity: 0; transition: opacity 0.2s; }
+  .loop-badge.visible { opacity: 1; }
+
+  .vocab-card { width: 100%; max-width: 640px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+  .vocab-title { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .vocab-list { display: flex; flex-direction: column; gap: 12px; }
+  .vocab-item { border-left: 2px solid var(--border); padding-left: 12px; }
+  .vocab-phrase { font-size: 13px; color: var(--accent); margin-bottom: 3px; }
+  .vocab-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+  .screen-fade { animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loadingScreen">
+  <div class="loading-dot"></div>
+  <div class="loading-text">Loading...</div>
+</div>
+
+<!-- HOME -->
+<div id="homeScreen">
+  <div class="app-header">
+    <div class="app-label">English Listening</div>
+    <div class="app-title">Izakaya <span>English</span></div>
+    <div class="app-subtitle" id="homeSubtitle">居酒屋で使える英会話</div>
+  </div>
+  <div class="scene-grid" id="sceneGrid"></div>
+</div>
+
+<!-- PLAYER -->
+<div id="playerScreen">
+  <div class="player-nav">
+    <button class="back-btn" onclick="goHome()">← Back</button>
+    <span class="nav-title" id="navTitle"></span>
+  </div>
+  <div class="player-header">
+    <div class="player-label">Now Playing</div>
+    <div class="player-title" id="playerTitle"></div>
+  </div>
+  <div class="scene-play-card">
+    <div class="play-scene-title" id="playSceneTitle"></div>
+    <div class="controls">
+      <div class="ctrl-group">
+        <button class="btn primary" id="mainBtn" onclick="togglePlay()">▶&nbsp; Play All</button>
+        <button class="btn icon-btn" id="loopLineBtn" title="この行をリピート" onclick="toggleRepeat()">⟳</button>
+        <button class="btn icon-btn" id="loopAllBtn" title="全体をループ" onclick="toggleLoopAll()">↺ ALL</button>
+      </div>
+      <div class="speed-control">
+        <span class="speed-label">SPEED</span>
+        <select class="speed-select" id="speedSelect" onchange="changeSpeed()">
+          <option value="0.7">0.7×</option>
+          <option value="0.85" selected>0.85×</option>
+          <option value="1.0">1.0×</option>
+          <option value="1.2">1.2×</option>
+        </select>
+      </div>
+    </div>
+    <div class="status-bar">
+      <div class="status-text"><span class="dot" id="statusDot"></span><span id="statusText">Ready</span></div>
+      <div class="loop-badge" id="loopBadge"></div>
+    </div>
+    <div class="progress-bar" style="margin-top:16px;margin-bottom:0"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="lines" id="linesContainer"></div>
+  </div>
+  <div class="vocab-card">
+    <div class="vocab-title">▸ Key Phrases — 覚えておきたい表現</div>
+    <div class="vocab-list" id="vocabList"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════
+let CONTENTS = [];        // loaded from contents.json
+let current  = null;      // active scene object
+let currentLine = -1;
+let isPlaying   = false;
+let repeatMode  = false;
+let loopAll     = false;
+let speed       = 0.85;
+let utterance   = null;
+const synth     = window.speechSynthesis;
+
+// ═══════════════════════════════════════════════
+//  PLAY COUNT  (localStorage)
+// ═══════════════════════════════════════════════
+const STORAGE_KEY = 'izakaya-play-counts';
+
+function loadCounts()          { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { return {}; } }
+function saveCounts(c)         { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); } catch {} }
+function getCount(id)          { return loadCounts()[id] || 0; }
+function incrementCount(id)    { const c = loadCounts(); c[id] = (c[id] || 0) + 1; saveCounts(c); return c[id]; }
+
+// ═══════════════════════════════════════════════
+//  SPEAKER INDEX
+//  各シーンで登場順に 0 / 1 / 2 を自動付与。
+//  contents.json に speakerIndex を書く必要なし。
+// ═══════════════════════════════════════════════
+function assignSpeakerIndices(dialogue) {
+  const map = {};
+  let next = 0;
+  return dialogue.map(line => {
+    if (!(line.speaker in map)) {
+      map[line.speaker] = next < 3 ? next++ : 0;
+    }
+    return { ...line, speakerIndex: map[line.speaker] };
+  });
+}
+
+// ═══════════════════════════════════════════════
+//  LOAD contents.json
+// ═══════════════════════════════════════════════
+async function loadContents() {
+  const res  = await fetch('./contents.json');
+  const raw  = await res.json();
+
+  // id・tag・speakerIndex を自動付与
+  CONTENTS = raw.map((scene, i) => ({
+    ...scene,
+    id:       i + 1,
+    tag:      `Scene ${i + 1}`,
+    dialogue: assignSpeakerIndices(scene.dialogue),
+  }));
+}
+
+// ═══════════════════════════════════════════════
+//  HOME
+// ═══════════════════════════════════════════════
+function buildHome() {
+  document.getElementById('homeSubtitle').textContent =
+    `居酒屋で使える英会話 — 全 ${CONTENTS.length} シーン`;
+
+  const grid = document.getElementById('sceneGrid');
+  grid.innerHTML = '';
+
+  CONTENTS.forEach(scene => {
+    const count = getCount(scene.id);
+    const countHtml = count === 0
+      ? `<span class="play-count">未再生</span>`
+      : `<span class="play-count has-plays"><span class="play-count-dot"></span>${count} plays</span>`;
+
+    const card = document.createElement('div');
+    card.className = 'scene-card';
+    card.id = `card-${scene.id}`;
+    card.onclick = () => openScene(scene.id);
+    card.innerHTML = `
+      <div class="scene-num">${String(scene.id).padStart(2, '0')}</div>
+      <div class="scene-info">
+        <div class="scene-tag">${scene.tag}</div>
+        <div class="scene-name">${scene.title}</div>
+        <div class="scene-desc">${scene.subtitle}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+        <span class="scene-badge">${scene.badge}</span>
+        ${countHtml}
+      </div>
+      <span class="scene-arrow">›</span>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ═══════════════════════════════════════════════
+//  NAVIGATION
+// ═══════════════════════════════════════════════
+function openScene(id) {
+  stopPlayback();
+  current = CONTENTS.find(s => s.id === id);
+  if (!current) return;
+
+  // nav / header
+  document.getElementById('navTitle').textContent = `${current.tag} / ${current.title}`;
+  const words = current.title.split(' ');
+  const half  = Math.ceil(words.length / 2);
+  document.getElementById('playerTitle').innerHTML =
+    `${words.slice(0, half).join(' ')} <span>${words.slice(half).join(' ')}</span>`;
+  document.getElementById('playSceneTitle').textContent = `▸ ${current.sceneLabel}`;
+
+  // dialogue lines
+  const container = document.getElementById('linesContainer');
+  container.innerHTML = '';
+  current.dialogue.forEach((line, i) => {
+    const div = document.createElement('div');
+    div.className = `line spk-${line.speakerIndex}`;
+    div.dataset.index = i;
+    div.onclick = () => playLine(i);
+    div.innerHTML = `
+      <span class="speaker">${line.speaker}</span>
+      <span class="line-text">${line.text}</span>
+      <button class="play-btn-inline" onclick="event.stopPropagation();playLine(${i})">▶</button>
+    `;
+    container.appendChild(div);
+  });
+
+  // vocab
+  const vocabList = document.getElementById('vocabList');
+  vocabList.innerHTML = '';
+  current.vocab.forEach(v => {
+    const div = document.createElement('div');
+    div.className = 'vocab-item';
+    div.innerHTML = `<div class="vocab-phrase">${v.phrase}</div><div class="vocab-desc">${v.desc}</div>`;
+    vocabList.appendChild(div);
+  });
+
+  // reset player UI
+  incrementCount(current.id);
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('mainBtn').innerHTML = '▶&nbsp; Play All';
+  document.getElementById('mainBtn').classList.remove('playing');
+  setStatus('Ready', false);
+  currentLine = -1;
+
+  // switch screens
+  document.getElementById('homeScreen').classList.remove('active');
+  const ps = document.getElementById('playerScreen');
+  ps.classList.add('active', 'screen-fade');
+  window.scrollTo(0, 0);
+}
+
+function goHome() {
+  stopPlayback();
+
+  // refresh count badge
+  if (current) {
+    const count = getCount(current.id);
+    const card  = document.getElementById(`card-${current.id}`);
+    if (card) {
+      const el = card.querySelector('.play-count');
+      if (el) {
+        el.className = 'play-count has-plays';
+        el.innerHTML = `<span class="play-count-dot"></span>${count} plays`;
+      }
+    }
+  }
+
+  document.getElementById('playerScreen').classList.remove('active', 'screen-fade');
+  document.getElementById('homeScreen').classList.add('active', 'screen-fade');
+  window.scrollTo(0, 0);
+}
+
+// ═══════════════════════════════════════════════
+//  PLAYBACK
+// ═══════════════════════════════════════════════
+function getVoice(speakerIndex) {
+  const voices = synth.getVoices().filter(v => v.lang.startsWith('en'));
+  return voices.length ? voices[speakerIndex % voices.length] : null;
+}
+
+function setStatus(text, speaking) {
+  document.getElementById('statusText').textContent = text;
+  document.getElementById('statusDot').className = 'dot' + (speaking ? ' speaking' : '');
+}
+
+function setActive(index) {
+  document.querySelectorAll('#linesContainer .line')
+    .forEach((el, i) => el.classList.toggle('active', i === index));
+}
+
+function updateProgress(index) {
+  const total = current ? current.dialogue.length : 1;
+  document.getElementById('progressFill').style.width = `${(index + 1) / total * 100}%`;
+}
+
+function speakLine(index, onEnd) {
+  if (utterance) synth.cancel();
+  const line = current.dialogue[index];
+  utterance = new SpeechSynthesisUtterance(line.text);
+  utterance.rate  = speed;
+  utterance.pitch = 1.0 - line.speakerIndex * 0.1;
+  const voice = getVoice(line.speakerIndex);
+  if (voice) utterance.voice = voice;
+  utterance.onstart = () => setStatus(`Speaking — ${line.speaker}...`, true);
+  utterance.onend   = () => onEnd && onEnd();
+  utterance.onerror = () => onEnd && onEnd();
+  synth.speak(utterance);
+}
+
+function playSequence(index) {
+  if (index >= current.dialogue.length) {
+    if (loopAll) { setTimeout(() => isPlaying && playSequence(0), 700); return; }
+    isPlaying = false; currentLine = -1; setActive(-1);
+    setStatus('Finished', false);
+    document.getElementById('progressFill').style.width = '100%';
+    document.getElementById('mainBtn').innerHTML = '▶&nbsp; Play All';
+    document.getElementById('mainBtn').classList.remove('playing');
+    return;
+  }
+  currentLine = index; setActive(index); updateProgress(index);
+  speakLine(index, () => {
+    if (!isPlaying) return;
+    setTimeout(() => isPlaying && playSequence(repeatMode ? index : index + 1), 500);
+  });
+}
+
+function togglePlay() {
+  if (isPlaying) {
+    isPlaying = false; synth.cancel();
+    setStatus('Paused', false);
+    document.getElementById('mainBtn').innerHTML = '▶&nbsp; Play All';
+    document.getElementById('mainBtn').classList.remove('playing');
+  } else {
+    isPlaying = true;
+    document.getElementById('mainBtn').innerHTML = '■&nbsp; Stop';
+    document.getElementById('mainBtn').classList.add('playing');
+    playSequence(currentLine >= 0 ? currentLine : 0);
+  }
+}
+
+function playLine(index) {
+  isPlaying = false; synth.cancel();
+  currentLine = index; setActive(index); updateProgress(index);
+  document.getElementById('mainBtn').innerHTML = '▶&nbsp; Play All';
+  document.getElementById('mainBtn').classList.remove('playing');
+  speakLine(index, () => setStatus('Ready', false));
+}
+
+function stopPlayback() {
+  isPlaying = false;
+  synth.cancel();
+  utterance = null;
+}
+
+function toggleRepeat() {
+  repeatMode = !repeatMode;
+  if (repeatMode) loopAll = false;
+  document.getElementById('loopLineBtn').classList.toggle('loop-on', repeatMode);
+  document.getElementById('loopAllBtn').classList.remove('loop-on');
+  updateBadge();
+}
+
+function toggleLoopAll() {
+  loopAll = !loopAll;
+  if (loopAll) repeatMode = false;
+  document.getElementById('loopAllBtn').classList.toggle('loop-on', loopAll);
+  document.getElementById('loopLineBtn').classList.remove('loop-on');
+  updateBadge();
+}
+
+function updateBadge() {
+  const badge = document.getElementById('loopBadge');
+  if (repeatMode)      { badge.textContent = '⟳ LINE REPEAT'; badge.classList.add('visible'); }
+  else if (loopAll)    { badge.textContent = '↺ LOOP ALL';    badge.classList.add('visible'); }
+  else                 { badge.textContent = '';               badge.classList.remove('visible'); }
+}
+
+function changeSpeed() {
+  speed = parseFloat(document.getElementById('speedSelect').value);
+}
+
+if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = () => {};
+
+// ═══════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════
+(async () => {
+  try {
+    await loadContents();
+    buildHome();
+    document.getElementById('loadingScreen').style.display = 'none';
+    document.getElementById('homeScreen').classList.add('active', 'screen-fade');
+  } catch (err) {
+    document.getElementById('loadingScreen').innerHTML = `
+      <div style="color:#e87a7a;font-size:12px;text-align:center;line-height:2">
+        コンテンツの読み込みに失敗しました。<br>
+        contents.json が同じフォルダにあるか確認してください。<br><br>
+        <span style="color:#6b7280;font-size:10px">${err.message}</span>
+      </div>`;
+  }
+})();
+</script>
+</body>
+</html>
